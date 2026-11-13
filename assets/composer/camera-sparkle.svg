@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 2134052001">
+<path id="Star 1" d="M2.66266 0.223636C2.76708 -0.0745451 3.23292 -0.0745456 3.33734 0.223636L3.92331 1.897C3.94398 1.95603 3.99191 2.00404 4.05469 2.02858L5.78637 2.70571C6.07121 2.81709 6.07121 3.18291 5.78637 3.29429L4.05469 3.97142C3.99191 3.99596 3.94398 4.04397 3.92331 4.103L3.33734 5.77636C3.23292 6.07455 2.76708 6.07455 2.66266 5.77636L2.07669 4.103C2.05602 4.04397 2.00809 3.99596 1.94531 3.97142L0.213632 3.29429C-0.0712106 3.18291 -0.0712109 2.81709 0.213632 2.70571L1.94531 2.02858C2.00809 2.00404 2.05602 1.95603 2.07669 1.897L2.66266 0.223636Z" fill="url(#paint0_linear_0_119)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_119" x1="6.4759" y1="-1.0192e-07" x2="-1.82752e-07" y2="6" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.7"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

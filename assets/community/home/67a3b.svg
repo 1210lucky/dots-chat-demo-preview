@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="indicator_video_fill_black_c">
+<circle id="bg" cx="10" cy="10" r="10" fill="#303034" fill-opacity="0.5"/>
+<path id="play_black_c" d="M8.43887 6.22935L13.4872 9.2092C13.9219 9.46581 14.067 10.0274 13.8112 10.4636C13.7325 10.5979 13.6209 10.7098 13.4871 10.7888L8.43878 13.7679C8.00401 14.0244 7.44427 13.8788 7.18856 13.4426C7.10602 13.3018 7.0625 13.1414 7.0625 12.978V7.01912C7.0625 6.51306 7.47139 6.10282 7.97577 6.10282C8.13862 6.10282 8.29851 6.1465 8.43887 6.22935Z" fill="white"/>
+</g>
+</svg>

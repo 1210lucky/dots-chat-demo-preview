@@ -1,0 +1,10 @@
+.sheet.thinking-sheet{height:75%;max-height:calc(100% - max(16px,env(safe-area-inset-top)));padding-bottom:max(28px,env(safe-area-inset-bottom));transition:height .28s var(--ease),transform .25s var(--ease)}
+.sheet.thinking-sheet[data-sheet-size="high"]{height:93.66197183%}
+.sheet.thinking-sheet .sheet-content{min-height:0;flex:1;scrollbar-width:thin;touch-action:pan-y}
+.sheet.thinking-sheet .sheet-header{touch-action:none;user-select:none;cursor:grab}
+.sheet.thinking-sheet .sheet-handle{width:64px;height:24px;margin:0 auto -8px;background:none;position:relative;touch-action:none;cursor:grab;border-radius:10px;flex:none}
+.sheet.thinking-sheet .sheet-handle:before{content:"";position:absolute;width:32px;height:4px;background:#dedede;border-radius:9px;top:9px;left:16px}
+.sheet.thinking-sheet .sheet-handle:focus-visible{outline:2px solid #3dc9b7;outline-offset:1px}
+.sheet.thinking-sheet.is-dragging{transition:none;animation:none}
+.sheet.thinking-sheet.is-dragging .sheet-header,.sheet.thinking-sheet.is-dragging .sheet-handle{cursor:grabbing}
+@media(prefers-reduced-motion:reduce){.sheet.thinking-sheet{transition:none}}
