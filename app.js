@@ -4,7 +4,7 @@ const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escapeHTML = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const delay = ms => new Promise(r=>setTimeout(r,ms));
-const names = {idle:'常态',think:'思考','think-long':'思考',happy:'开心',sad:'伤心'};
+const names = {idle:'常态',think:'思考','think-long':'思考',happy:'开心',sad:'绞尽脑汁'};
 let scenario='full', running=false, runId=0, currentStage='done', feedback=null, versions=1, version=0, skipped=false, lastQuery='北京旅游攻略', sheetReturnFocus;
 let titleEmotion='idle';
 let currentSteps=[];
