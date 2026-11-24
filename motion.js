@@ -3,7 +3,7 @@
  'use strict';
  const records = new Map();
  const preference = matchMedia('(prefers-reduced-motion: reduce)');
- const stillFrames = {idle:0,think:30,happy:40,sad:45};
+ const stillFrames = {idle:0,think:90,happy:40,sad:45};
  let requestId = 0;
  const stateKey = state => state === 'think-long' ? 'think' : state;
  const isCurrent = (record, id) => records.get(record.el) === record && record.id === id;
