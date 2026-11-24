@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Component 1">
+<circle id="Ellipse 1851" cx="7" cy="7" r="6" fill="#303034" fill-opacity="0.1"/>
+<g id="Group 2053141652">
+<circle id="Ellipse 1853" opacity="0" cx="7" cy="7" r="6" fill="#303034" fill-opacity="0.1"/>
+<path id="Ellipse 1852 (Stroke)" d="M3.48604 3.02844C3.8015 3.29688 3.83961 3.77022 3.57117 4.08568C2.90268 4.87124 2.49998 5.88771 2.49998 7.00015C2.49998 8.1126 2.90268 9.12906 3.57117 9.91463C3.83961 10.2301 3.8015 10.7034 3.48604 10.9719C3.17058 11.2403 2.69724 11.2022 2.4288 10.8867C1.53816 9.84011 0.999985 8.48202 0.999985 7.00015C0.999985 5.51829 1.53816 4.1602 2.4288 3.11357C2.69724 2.79811 3.17059 2.76 3.48604 3.02844Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_radial_0_253)"/>
+<path id="Ellipse 1852 (Stroke)_2" d="M11.5 7.00015C11.5 5.88771 11.0973 4.87124 10.4288 4.08568C10.1604 3.77022 10.1985 3.29688 10.5139 3.02844C10.8294 2.76 11.3027 2.79811 11.5712 3.11357C12.4618 4.1602 13 5.51829 13 7.00015C13 8.48202 12.4618 9.84011 11.5712 10.8867C11.3027 11.2022 10.8294 11.2403 10.5139 10.9719C10.1985 10.7034 10.1604 10.2301 10.4288 9.91463C11.0973 9.12906 11.5 8.1126 11.5 7.00015Z" fill="url(#paint1_radial_0_253)"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_253" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.75 11) rotate(-93.5763) scale(8.01561 10.6142)">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</radialGradient>
+<radialGradient id="paint1_radial_0_253" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 11) rotate(-93.5763) scale(8.01561 10.6142)">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
