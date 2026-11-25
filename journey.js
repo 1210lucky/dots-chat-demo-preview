@@ -54,7 +54,7 @@
   if(chat){restore();if(options.query)start(options.query);status('顶部常态眨眼；思考结束会播完当前轮，赞/踩各回应一次。');}
   else if(route.startsWith('search'))cleanup=window.SearchDemo.render(route,host,deps);
   else if(['settings','fallback','shared-answer'].includes(route))cleanup=renderExtra(route,host,deps);
-  else{status({home:'点击左上角描边点点进入对话，也可打开笔记或搜索。',note:'图文笔记：底部描边入口；分享面板含首次引导。',video:'视频笔记：Ask Dots 入口与视频分享首次引导。',drag:'长按或拖动笔记到下方点点；点点保持常态眨眼。',share:'第三行首位为描边入口；首次引导“总结笔记”。','share-video':'视频首次引导“总结视频”，与图文分别计次。',messages:'消息页使用静态点点头像，点击进入对话。',comments:'评论区 @点点 提问，回复可打开半层答案。','comment-sheet':'评论回复半层：静态头像与底部“我也问点点”。'}[route]);cleanup=window.CommunityDemo.render(route,host,deps);}
+  else{status({home:'点击左上角描边点点进入对话，也可打开笔记或搜索。',note:'图文笔记：底部描边入口；分享面板含首次引导。',video:'视频笔记：Ask Dots 入口与视频分享首次引导。',drag:'长按或拖动笔记到下方点点；点点保持常态眨眼。',share:'第三行首位为描边入口；首次引导“总结笔记”。','share-video':'视频首次引导“总结视频”，与图文分别计次。',messages:'消息页使用静态点点头像，点击进入对话。',comments:'评论区 @点点 提问，回复可打开半层答案。','comment-sheet':'评论回复半层：顶部点点默认眨眼，底部可点“我也问点点”。'}[route]);cleanup=window.CommunityDemo.render(route,host,deps);}
  }
  function open(text){go('chat',text?{query:text}:{});}
  const still='assets/figma/e06a7.svg';
