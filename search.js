@@ -12,7 +12,7 @@
   const later=(fn,ms)=>{const t=setTimeout(()=>{if(alive)fn();},ms);timers.push(t);return t;};
   const status=text=>{if(alive)deps.status?.(text);};
   const fresh=route!=='search-start';
-  if(fresh&&(!deps.resume||!session||session.kind!==route))session={id:++serial,query:deps.query||'北京附近最大的湖',kind:route,clicked:false,consumed:false,complete:route!=='search',started:false};
+  if(fresh&&(!deps.resume||!session||session.kind!==route))session={id:++serial,query:deps.query||'北京附近最大的湖',kind:route,clicked:false,consumed:route==='search',complete:route!=='search'};
   const s=session;
   const back='<img src="assets/search/d49d1.svg" alt="">';
   const header=`<form class="sr-search-form"><button type="button" class="sr-back" aria-label="返回首页">${back}</button><label class="sr-input-wrap"><input aria-label="搜索内容" placeholder="搜索你感兴趣的内容" value="${route==='search-start'?'':esc(s.query)}"><button type="button" class="sr-clear" aria-label="清空搜索">×</button></label><button class="sr-submit">搜索</button></form>`;
@@ -32,18 +32,17 @@
    hold.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(q('input').value.trim());}};
    status('搜索中间页：绿色静态入口，按住问点点。');
   }else{
-   const icon=q('.sr-avatar'),list=q('.sr-results'),card=q('.sr-onebox'),body=q('.sr-first-text');
+   const icon=q('.sr-avatar'),list=q('.sr-results'),card=q('.sr-onebox');
    window.DotsMotion.play(icon,'idle',{freeze:true});
    function entryVisible(){const r=icon.getBoundingClientRect(),h=host.getBoundingClientRect();return r.width>0&&r.top>=h.top&&r.bottom<=h.bottom;}
-   function finishAio(){if(!alive||!s.started)return;status('正文已上屏；眨眼正在播完当前轮，随后恢复静态。');window.DotsMotion.finish(icon,'idle',{freeze:true}).then(done=>{if(done&&alive)status('在线总结完成：已播完当前眨眼，入口恢复静态。本次搜索不再重复触发。');});s.started=false;}
-   function loadAio(){if(s.complete)return;s.complete=true;card.classList.remove('loading');finishAio();}
+   function loadAio(){if(s.complete)return;s.complete=true;card.classList.remove('loading');status('在线总结完成：点点保持静止。');}
    observer=new IntersectionObserver(entries=>{
     for(const e of entries){
      if(!e.isIntersecting)continue;
-     if(e.target===card&&!s.complete&&!s.loadingStarted){s.loadingStarted=true;if(deps.flags.aio&&!s.consumed&&entryVisible()){s.consumed=true;s.started=true;window.DotsMotion.play(icon,'idle');status('在线总结可见：播放默认眨眼，等待首段正文上屏。');}else status('在线总结生成中；眨眼开关已关闭。');later(loadAio,3000);}
-     if(e.target===body&&s.complete)finishAio();
+     if(e.target===card&&!s.complete&&!s.loadingStarted){s.loadingStarted=true;status('在线总结生成中：点点保持静止。');later(loadAio,3000);}
     }
-   },{root:list,threshold:0.1});observer.observe(card);observer.observe(body);
+   },{root:list,threshold:0.1});observer.observe(card);
+   if(route==='search')status(s.complete?'在线总结完成：点点保持静止。':'在线总结生成中：点点保持静止。');
    if(route!=='search')status(route==='search-scroll'?'向下滑约两屏并停留 600ms：本次搜索可触发一次默认眨眼。':'离线总结：绿色静态入口；继续下滑可体验搜索触发规则。');
    q('.sr-ask').onclick=()=>open();q('.sr-summary-link').onclick=()=>open();
    host.querySelectorAll('.sr-card').forEach((b,i)=>b.onclick=()=>{window.CommunityDemo.setExternalNote({id:'lake-'+i,title:titles[i%4],description:'周末去金海湖吹吹风。环湖走走停停，从不同角度看湖面和远处的山，找一片草地坐下来，把时间留给风景。\n这次整理了沿湖自驾和散步的路线，出发前记得确认开放安排和天气。',tags:'#北京周末  #金海湖  #湖畔散步',author:authors[i%4],photo:'assets/search/'+photos[i%4],avatar:'assets/search/'+['132b8.jpg','d4a9c.png','9b4d7.png'][i%3],likes:'428',video:false});deps.navigate('note');});
@@ -56,7 +55,7 @@
    if(route==='search-scroll')card.remove();
    if(deps.resume&&s.scrollTop)list.scrollTop=s.scrollTop;
   }
-  return()=>{alive=false;if(s&&route!=='search-start'){s.scrollTop=q('.sr-results')?.scrollTop||0;s.loadingStarted=false;s.started=false;}timers.forEach(clearTimeout);clearTimeout(scrollTimer);clearTimeout(holdTimer);observer?.disconnect();window.DotsMotion.destroyWithin(host);};
+  return()=>{alive=false;if(s&&route!=='search-start'){s.scrollTop=q('.sr-results')?.scrollTop||0;s.loadingStarted=false;}timers.forEach(clearTimeout);clearTimeout(scrollTimer);clearTimeout(holdTimer);observer?.disconnect();window.DotsMotion.destroyWithin(host);};
  }
  window.SearchDemo={render};
 })();

@@ -8,7 +8,7 @@
  ];
  const routes=Object.fromEntries(groups.flatMap(g=>g[1]));
  const host=document.querySelector('#communityHost'),phone=document.querySelector('#phone');
- const flags={aio:true,scroll:true};
+ const flags={scroll:true};
  let route='home',cleanup=null,returnTo='home',query='北京附近最大的湖';
  const status=t=>{document.querySelector('#journeyStatus').textContent=t;};
  window.DotsContext={
@@ -70,7 +70,6 @@
  routeNav.addEventListener('click',e=>{const b=e.target.closest('[data-route]');if(b)go(b.dataset.route);});
  select.onchange=()=>go(select.value);
  document.querySelector('#backButton').addEventListener('click',e=>{e.stopImmediatePropagation();go(returnTo,{resume:true});},true);
- document.querySelector('#aioToggle').onchange=e=>{flags.aio=e.target.checked;if(route.startsWith('search')&&route!=='search-start')go(route);};
  document.querySelector('#scrollToggle').onchange=e=>{flags.scroll=e.target.checked;if(route.startsWith('search')&&route!=='search-start')go(route);};
  document.querySelector('#shareReplay').onclick=()=>{window.CommunityDemo.replayShareGuide();go(route);};
  document.querySelector('#mobileReplay').onclick=()=>{if(route.startsWith('chat'))start();else if(route.startsWith('share')){window.CommunityDemo.replayShareGuide();go(route);}else go(route);};
