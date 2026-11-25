@@ -3,7 +3,7 @@
  const groups=[
   ['社区入口',[['home','双列流首页'],['note','图文笔记'],['video','视频笔记'],['drag','拖拽问笔记']]],
   ['分享与消息',[['share','图文分享'],['share-video','视频分享'],['messages','消息页'],['comments','评论 @点点'],['comment-sheet','评论回复半层']]],
-  ['搜索',[['search-start','搜索中间页'],['search','在线总结等待'],['search-offline','离线总结'],['search-scroll','下滑触发眨眼']]],
+  ['搜索',[['search-start','搜索中间页'],['search','在线总结等待'],['search-offline','离线总结'],['search-scroll','下滑触发放大镜']]],
   ['点点容器',[['chat','主站对话'],['chat-standalone','独立端对话'],['shared-answer','共享答案'],['settings','设置页'],['fallback','兜底页']]]
  ];
  const routes=Object.fromEntries(groups.flatMap(g=>g[1]));

@@ -43,14 +43,14 @@
     }
    },{root:list,threshold:0.1});observer.observe(card);
    if(route==='search')status(s.complete?'在线总结完成：点点保持静止。':'在线总结生成中：点点保持静止。');
-   if(route!=='search')status(route==='search-scroll'?'向下滑约两屏并停留 600ms：本次搜索可触发一次默认眨眼。':'离线总结：绿色静态入口；继续下滑可体验搜索触发规则。');
+   if(route!=='search')status(route==='search-scroll'?'向下滑约两屏并停留 600ms：本次搜索可触发一次放大镜动效，眼睛保持竖直。':'离线总结：绿色静态入口；继续下滑可体验搜索触发规则。');
    q('.sr-ask').onclick=()=>open();q('.sr-summary-link').onclick=()=>open();
    host.querySelectorAll('.sr-card').forEach((b,i)=>b.onclick=()=>{window.CommunityDemo.setExternalNote({id:'lake-'+i,title:titles[i%4],description:'周末去金海湖吹吹风。环湖走走停停，从不同角度看湖面和远处的山，找一片草地坐下来，把时间留给风景。\n这次整理了沿湖自驾和散步的路线，出发前记得确认开放安排和天气。',tags:'#北京周末  #金海湖  #湖畔散步',author:authors[i%4],photo:'assets/search/'+photos[i%4],avatar:'assets/search/'+['132b8.jpg','d4a9c.png','9b4d7.png'][i%3],likes:'428',video:false});deps.navigate('note');});
    host.querySelectorAll('.sr-tabs>button:not(.sr-ask),.sr-filters button').forEach(b=>b.onclick=()=>{b.parentElement.querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');deps.toast('已切换到'+b.textContent.replace('⌄',''));});
    list.addEventListener('scroll',()=>{
     clearTimeout(scrollTimer);
     if(!deps.flags.scroll||s.clicked||s.consumed||list.scrollTop<list.clientHeight*2||!entryVisible())return;
-    scrollTimer=later(()=>{if(s.clicked||s.consumed||!entryVisible())return;s.consumed=true;status('已下滑两屏并停留 600ms：播放一次默认眨眼，结束后恢复静态。');window.DotsMotion.play(icon,'idle',{loop:false,returnTo:'idle',returnOptions:{freeze:true},onComplete:()=>status('下滑眨眼已完成：恢复静态；同一次搜索不会重复播放。')});},600);
+    scrollTimer=later(()=>{if(s.clicked||s.consumed||!entryVisible())return;s.consumed=true;status('已下滑两屏并停留 600ms：播放一次放大镜动效，眼睛保持竖直，结束后恢复静态。');window.DotsMotion.play(icon,'search-magnifier',{loop:false,returnTo:'idle',returnOptions:{freeze:true},onComplete:()=>status('下滑放大镜动效已完成：恢复静态；同一次搜索不会重复播放。')});},600);
    },{passive:true});
    if(route==='search-scroll')card.remove();
    if(deps.resume&&s.scrollTop)list.scrollTop=s.scrollTop;
